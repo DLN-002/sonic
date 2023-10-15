@@ -41,21 +41,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 function die () {
     jumps = 0
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
+    pause(100)
+    tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+    info.changeLifeBy(-1)
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
