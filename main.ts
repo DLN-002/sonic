@@ -1,5 +1,6 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     if (sonic.isHittingTile(CollisionDirection.Bottom)) {
+        jumps = 0
         if (sonic.image == spin) {
             if (tiles.tileAtLocationEquals(sonic.tilemapLocation(), assets.tile`myTile0`)) {
                 info.changeScoreBy(10)
@@ -23,49 +24,60 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, lo
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    sonic.ay = spin_hite
-    pause(spin_length)
-    sonic.ay = 500
+    if (jumps < 2) {
+        jumps += 1
+        sonic.ay = spin_hite
+        pause(spin_length)
+        sonic.ay = 500
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, location) {
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
+    die()
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
         sonic.setImage(assets.image`sonicL`)
     }
 })
+function die () {
+    jumps = 0
+    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`)) {
+        pause(100)
+        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+        info.changeLifeBy(-1)
+    }
+    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`)) {
+        pause(100)
+        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+        info.changeLifeBy(-1)
+    }
+    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`)) {
+        pause(100)
+        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+        info.changeLifeBy(-1)
+    }
+}
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
         sonic.setImage(assets.image`sonicR`)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
+    die()
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    jumps = 0
     sonic.vy = -350
     pause(200)
     sonic.ay = 500
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`)) {
-        pause(100)
-        tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
-        info.changeLifeBy(-1)
-    }
+    die()
 })
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     sonic.setImage(assets.image`sonicR`)
 })
+let jumps = 0
 let sonic: Sprite = null
 let spin: Image = null
 let spin_length = 0
@@ -194,8 +206,8 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
 game.splash("Green Hill Zone", "Phase 1")
-spin_hite = -550
-spin_length = 350
+spin_hite = -500
+spin_length = 300
 spin = assets.image`spin`
 sonic = sprites.create(assets.image`sonicR`, SpriteKind.Player)
 controller.moveSprite(sonic, 100, 0)
