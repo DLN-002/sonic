@@ -28,16 +28,29 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, lo
     tiles.setTileAt(location, assets.tile`transparency16`)
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
-    game.splash("Phase 1 Complete!", "Score " + info.score())
-    game.splash("Rings " + rings + "/56", "Red Rings " + red_ring_ + "/1")
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
+    game.splash("Phase 2/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/62", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
-    game.splash("Green Hill Zone", "Phase 2")
+    game.splash("Green Hill Zone", "Phase 3/3")
     rings = 0
     red_ring_ = 0
-    tiles.setCurrentTilemap(tilemap`level5`)
+    tiles.setCurrentTilemap(tilemap`level4`)
+    restart_location = tiles.getTileLocation(0, 0)
+    tiles.placeOnTile(sonic, restart_location)
+    sonic.setImage(assets.image`sonicR`)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
+    game.splash("Phase 1/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/56", "Red Rings " + red_ring_ + "/1")
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    game.splash("Green Hill Zone", "Phase 2/3")
+    rings = 0
+    red_ring_ = 0
+    tiles.setCurrentTilemap(tilemap`Green_Hill_Zone_Phase_2`)
     restart_location = tiles.getTileLocation(1, 11)
     tiles.placeOnTile(sonic, restart_location)
+    sonic.setImage(assets.image`sonicR`)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (jumps < 2) {
@@ -67,6 +80,12 @@ function die () {
         info.changeLifeBy(-1)
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
+    jumps = 0
+    sonic.vx = 750
+    pause(200)
+    sonic.vx = 0
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
         sonic.setImage(assets.image`sonicR`)
@@ -236,7 +255,7 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-game.splash("Green Hill Zone", "Phase 1")
+game.splash("Green Hill Zone", "Phase 1/3")
 spin_hite = -500
 spin_length = 300
 spin = assets.image`spin`
@@ -244,6 +263,6 @@ sonic = sprites.create(assets.image`sonicR`, SpriteKind.Player)
 controller.moveSprite(sonic, 100, 0)
 scene.cameraFollowSprite(sonic)
 sonic.ay = 500
-tiles.setCurrentTilemap(tilemap`level1`)
+tiles.setCurrentTilemap(tilemap`Green_Hill_Zone_Phase_1`)
 restart_location = tiles.getTileLocation(1, 13)
 tiles.placeOnTile(sonic, restart_location)
