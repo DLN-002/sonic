@@ -24,41 +24,59 @@ namespace myImages {
 `;
             case "tCM=dVF~LbZNCAa6NJMd":
             case "sonicL":return img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c . . . . . . . . 
-. . c c 5 5 5 5 c c . . . . . . 
-. c 5 5 5 5 5 5 5 5 c . . . . . 
-c 5 5 5 5 5 1 f 5 5 5 c . . . . 
-c 5 5 5 5 5 f f 5 5 5 5 c . . . 
-c 5 5 5 5 5 5 5 5 5 5 5 c . . . 
-c c b b 1 b 5 5 5 5 5 5 d c . . 
-c 5 3 3 3 5 5 5 5 5 d d d c . . 
-. b 5 5 5 5 5 5 5 5 d d d c . . 
-. . c b b c 5 5 b d d d d c c . 
-. c b b c 5 5 b b d d d d c d c 
-. c c c c c c d d d d d d d d c 
-. . . c c c c d 5 5 b d d d c . 
-. . c c c c c b 5 5 b c c c . . 
-. . c b b b c d 5 5 b c . . . . 
+..ff...ffffffffffff..
+..f8fff888888888888f.
+..f8888888888df888f..
+..f888888888ddf88f...
+.f88888888888df8f....
+.f888811188888888f...
+.f8881111188888888f..
+..f18f1111888888888f.
+..f18f111188888ffffff
+.fff1f1118888888f....
+..fdd1111ddd88888f...
+..fddddddddd888888f..
+...fdddddddfffffffff.
+...ffffffffdf........
+..ffffddd8ffdf.......
+..f11fdddf11fdf......
+..f11fddf1111ff......
+...f1fdff1111f.......
+...ffff8ff11f........
+......fff8ff.........
+....ff22f8ff.........
+..ff122ff22ff........
+.f222ff21222f........
+f222f2222122f........
+fffffffffffff........
 `;
             case "image1":
             case "sonicR":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . c c c c . . . . 
-. . . . . . c c 5 5 5 5 c c . . 
-. . . . . c 5 5 5 5 5 5 5 5 c . 
-. . . . c 5 5 5 f 1 5 5 5 5 5 c 
-. . . c 5 5 5 5 f f 5 5 5 5 5 c 
-. . . c 5 5 5 5 5 5 5 5 5 5 5 c 
-. . c d 5 5 5 5 5 5 b 1 b b c c 
-. . c d d d 5 5 5 5 5 3 3 3 5 c 
-. . c d d d 5 5 5 5 5 5 5 5 b . 
-. c c d d d d b 5 5 c b b c . . 
-c d c d d d d b b 5 5 c b b c . 
-c d d d d d d d d c c c c c c . 
-. c d d d b 5 5 d c c c c . . . 
-. . c c c b 5 5 b c c c c c . . 
-. . . . c b 5 5 d c b b b c . . 
+..ffffffffffff...ff..
+.f888888888888fff8f..
+..f888fd8888888888f..
+...f88fdd888888888f..
+....f8fd88888888888f.
+...f888888881118888f.
+..f8888888811111888f.
+.f8888888881111f81f..
+ffffff888881111f81f..
+....f8888888111f1fff.
+...f88888ddd1111ddf..
+..f888888dddddddddf..
+.fffffffffdddddddf...
+........fdffffffff...
+.......fdff8dddffff..
+......fdf11fdddf11f..
+......ff1111fddf11f..
+.......f1111ffdf1f...
+........f11ff8ffff...
+.........ff8fff......
+.........ff8f22ff....
+........ff22ff221ff..
+........f22212ff222f.
+........f2212222f222f
+........fffffffffffff
 `;
         }
         return null;
