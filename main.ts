@@ -42,7 +42,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 function die () {
     jumps = 0
     pause(100)
-    tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+    tiles.placeOnTile(sonic, restart_location)
     info.changeLifeBy(-1)
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -70,6 +70,7 @@ let sonic: Sprite = null
 let spin: Image = null
 let spin_length = 0
 let spin_hite = 0
+let restart_location: tiles.Location = null
 info.setLife(3)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -194,6 +195,7 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
 game.splash("Green Hill Zone", "Phase 1")
+restart_location = tiles.getTileLocation(3, 14)
 spin_hite = -500
 spin_length = 300
 spin = assets.image`spin`
@@ -202,4 +204,4 @@ controller.moveSprite(sonic, 100, 0)
 scene.cameraFollowSprite(sonic)
 sonic.ay = 500
 tiles.setCurrentTilemap(tilemap`level1`)
-tiles.placeOnTile(sonic, tiles.getTileLocation(3, 14))
+tiles.placeOnTile(sonic, restart_location)
