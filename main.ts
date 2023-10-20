@@ -17,7 +17,15 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             }
         }
     }
-    jumping = false
+    if (sonic.image == spin) {
+        if (sonic.isHittingTile(CollisionDirection.Right)) {
+            if (tiles.tileAtLocationEquals(location.getNeighboringLocation(CollisionDirection.Right), assets.tile`myTile19`)) {
+                tiles.setTileAt(location.getNeighboringLocation(CollisionDirection.Right), assets.tile`transparency16`)
+                tiles.setWallAt(location.getNeighboringLocation(CollisionDirection.Right), false)
+            }
+        }
+        jumping = false
+    }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     sonic.setImage(spin)
@@ -36,7 +44,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, 
     rings = 0
     red_ring_ = 0
     tiles.setCurrentTilemap(tilemap`level4`)
-    restart_location = tiles.getTileLocation(0, 0)
+    restart_location = tiles.getTileLocation(2, 12)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
 })
