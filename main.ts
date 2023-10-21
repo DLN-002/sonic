@@ -19,7 +19,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
     if (sonic.image == spin) {
         if (sonic.isHittingTile(CollisionDirection.Right)) {
-            if (tiles.tileAtLocationEquals(location.getNeighboringLocation(CollisionDirection.Right), assets.tile`myTile19`)) {
+            if (tiles.tileAtLocationEquals(tiles.getTileLocation(location.column + 1, location.row), assets.tile`myTile19`)) {
                 tiles.setTileAt(location.getNeighboringLocation(CollisionDirection.Right), assets.tile`transparency16`)
                 tiles.setWallAt(location.getNeighboringLocation(CollisionDirection.Right), false)
             }
@@ -82,7 +82,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 function die () {
     jumps = 0
-    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile14`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile12`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`) || (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`))) {
+    if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile20`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile14`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile12`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`) || (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`))) {
         pause(100)
         tiles.placeOnTile(sonic, restart_location)
         info.changeLifeBy(-1)
@@ -93,6 +93,15 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, 
     sonic.vx = 750
     pause(200)
     sonic.vx = 0
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
+    game.splash("Phase 3/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/80", "Red Rings " + red_ring_ + "/2")
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    game.splash("Zone Complete!")
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile20`, function (sprite, location) {
+    die()
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
