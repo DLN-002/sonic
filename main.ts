@@ -85,6 +85,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, location) {
     die()
 })
+info.onScore(329, function () {
+    game.splash("New High Score!")
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, location) {
     game.splash("Phase 2/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
@@ -124,6 +127,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, 
     game.splash("Rings " + rings + "/80", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Zone Complete!")
+    scene.setBackgroundImage(assets.image`marble Zone`)
     game.splash("Marble Zone", "Phase 1/3")
     rings = 0
     red_ring_ = 0
@@ -163,7 +167,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile23`, function (sprite, location) {
     game.splash("Phase 1/3 Complete!", "Score " + info.score())
-    game.splash("Rings " + rings + "/98", "Red Rings " + red_ring_ + "/2")
+    game.splash("Rings " + rings + "/88", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Marble Zone", "Phase 2/3")
     rings = 0
