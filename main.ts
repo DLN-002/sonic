@@ -50,13 +50,13 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, 
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile24`, function (sprite, location) {
     game.splash("Phase 3/3 Complete!", "Score " + info.score())
-    game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
+    game.splash("Rings " + rings + "/77", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Zone Complete!")
     game.splash("Zone", "Phase 1/3")
     rings = 0
     red_ring_ = 0
-    tiles.setCurrentTilemap(tilemap`level11`)
+    tiles.setCurrentTilemap(tilemap`level6`)
     restart_location = tiles.getTileLocation(0, 0)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
@@ -96,7 +96,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, 
     rings = 0
     red_ring_ = 0
     tiles.setCurrentTilemap(tilemap`level11`)
-    restart_location = tiles.getTileLocation(2, 13)
+    restart_location = tiles.getTileLocation(2, 2)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
 })
