@@ -36,6 +36,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, lo
     tiles.setTileAt(location, assets.tile`transparency16`)
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile34`, function (sprite, location) {
+    game.splash("Phase 2/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    game.splash("Labyrinth Zone", "Phase 3/3")
+    rings = 0
+    red_ring_ = 0
+    tiles.setCurrentTilemap(tilemap`level6`)
+    restart_location = tiles.getTileLocation(2, 14)
+    tiles.placeOnTile(sonic, restart_location)
+    sonic.setImage(assets.image`sonicR`)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
     game.splash("Phase 2/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/62", "Red Rings " + red_ring_ + "/2")
@@ -53,10 +65,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile24`, function (sprite, 
     game.splash("Rings " + rings + "/77", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Zone Complete!")
-    game.splash("Zone", "Phase 1/3")
+    game.splash("Labyrinth Zone", "Phase 1/3")
     rings = 0
     red_ring_ = 0
     tiles.setCurrentTilemap(tilemap`level6`)
+    restart_location = tiles.getTileLocation(2, 14)
+    tiles.placeOnTile(sonic, restart_location)
+    sonic.setImage(assets.image`sonicR`)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile32`, function (sprite, location) {
+    game.splash("Phase 1/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    game.splash("Labyrinth Zone", "Phase 2/3")
+    rings = 0
+    red_ring_ = 0
+    tiles.setCurrentTilemap(tilemap`level9`)
     restart_location = tiles.getTileLocation(0, 0)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
@@ -87,6 +111,19 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, l
 })
 info.onScore(329, function () {
     game.splash("New High Score!")
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile33`, function (sprite, location) {
+    game.splash("Phase 3/3 Complete!", "Score " + info.score())
+    game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    game.splash("Zone Complete!")
+    game.splash("Zone", "Phase 1/3")
+    rings = 0
+    red_ring_ = 0
+    tiles.setCurrentTilemap(tilemap`level7`)
+    restart_location = tiles.getTileLocation(0, 0)
+    tiles.placeOnTile(sonic, restart_location)
+    sonic.setImage(assets.image`sonicR`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, location) {
     game.splash("Phase 2/3 Complete!", "Score " + info.score())
@@ -122,14 +159,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, 
     pause(200)
     sonic.vx = 0
 })
+info.onCountdownEnd(function () {
+    game.gameOver(true)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
     game.splash("Phase 3/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/80", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Zone Complete!")
-    game.splash("Marble Zone", "Phase 1/3")
     rings = 0
     red_ring_ = 0
+    game.splash("Marble Zone", "Phase 1/3")
     tiles.setCurrentTilemap(tilemap`level2`)
     scene.setBackgroundImage(assets.image`marble Zone`)
     restart_location = tiles.getTileLocation(2, 2)
