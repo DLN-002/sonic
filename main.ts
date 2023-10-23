@@ -96,7 +96,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile25`, function (sprite, 
     rings = 0
     red_ring_ = 0
     tiles.setCurrentTilemap(tilemap`level11`)
-    restart_location = tiles.getTileLocation(2, 2)
+    restart_location = tiles.getTileLocation(2, 13)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
 })
