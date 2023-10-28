@@ -61,6 +61,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, 
     sonic.setImage(assets.image`sonicR`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile24`, function (sprite, location) {
+    chaos_emerald += 1
     game.splash("Phase 3/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/77", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
@@ -69,13 +70,135 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile24`, function (sprite, 
     rings = 0
     red_ring_ = 0
     tiles.setCurrentTilemap(tilemap`level6`)
+    scene.setBackgroundImage(img`
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        bbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeee
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        eeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbbeeeeebbbbb
+        `)
     restart_location = tiles.getTileLocation(2, 14)
     tiles.placeOnTile(sonic, restart_location)
     sonic.setImage(assets.image`sonicR`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile32`, function (sprite, location) {
     game.splash("Phase 1/3 Complete!", "Score " + info.score())
-    game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
+    game.splash("Rings " + rings + "/133", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
     game.splash("Labyrinth Zone", "Phase 2/3")
     rings = 0
@@ -99,6 +222,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, 
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (jumps < 2) {
+        music.play(music.createSoundEffect(WaveShape.Square, 400, 600, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
         jumps += 1
         sonic.ay = spin_hite
         pause(spin_length)
@@ -110,6 +234,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, l
     die()
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile33`, function (sprite, location) {
+    chaos_emerald += 1
     game.splash("Phase 3/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/", "Red Rings " + red_ring_ + "/")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
@@ -141,13 +266,15 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
         sonic.setImage(assets.image`sonicL`)
     }
+    music.play(music.melodyPlayable(music.footstep), music.PlaybackMode.InBackground)
 })
 function die () {
     jumps = 0
     if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile20`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile14`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile12`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`) || (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`))) {
         pause(100)
-        tiles.placeOnTile(sonic, restart_location)
         info.changeLifeBy(-1)
+        music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
+        tiles.placeOnTile(sonic, restart_location)
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile18`, function (sprite, location) {
@@ -160,6 +287,7 @@ info.onCountdownEnd(function () {
     game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
+    chaos_emerald += 1
     game.splash("Phase 3/3 Complete!", "Score " + info.score())
     game.splash("Rings " + rings + "/80", "Red Rings " + red_ring_ + "/2")
     music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
@@ -180,6 +308,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(sonic.image == spin)) {
         sonic.setImage(assets.image`sonicR`)
     }
+    music.play(music.melodyPlayable(music.footstep), music.PlaybackMode.InBackground)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile17`, function (sprite, location) {
     jumps = 0
@@ -194,6 +323,7 @@ info.onScore(508, function () {
     game.splash("New High Score!")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    music.play(music.createSoundEffect(WaveShape.Square, 400, 600, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
     jumps = 0
     sonic.vy = -350
     pause(200)
@@ -234,6 +364,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile26`, function (sprite, 
     game.showLongText("Check Point!", DialogLayout.Bottom)
 })
 let red_rings = 0
+let chaos_emerald = 0
 let red_ring_ = 0
 let rings = 0
 let jumping = false
