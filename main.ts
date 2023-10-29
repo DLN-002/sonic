@@ -101,6 +101,9 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
         jumping = false
     }
 })
+info.onScore(642, function () {
+    game.splash("New High Score!")
+})
 function die () {
     jumps = 0
     if (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile20`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile14`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile12`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile7`) || (sonic.tileKindAt(TileDirection.Center, assets.tile`myTile5`) || sonic.tileKindAt(TileDirection.Center, assets.tile`myTile8`))) {
@@ -221,9 +224,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     sonic.setImage(spin)
-})
-info.onScore(508, function () {
-    game.splash("New High Score!")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
     rings += 1
