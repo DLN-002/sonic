@@ -570,6 +570,81 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `;
+            case "image5":
+            case "supersonicL":return img`
+..ff...ffffffffffff..
+..f5fff555555555555f.
+..f5555555555df555f..
+..f555555555ddf55f...
+.f55555555555df5f....
+.f555511155555555f...
+.f5551111155555555f..
+..f15f1111555555555f.
+..f15f111155555ffffff
+.fff1f1115555555f....
+..fdd1111ddd55555f...
+..fddddddddd555555f..
+...fdddddddfffffffff.
+...ffffffffdf........
+..ffffddd5ffdf.......
+..f11fdddf11fdf......
+..f11fddf1111ff......
+...f1fdff1111f.......
+...ffff5ff11f........
+......fff5ff.........
+....ff22f5ff.........
+..ff122ff22ff........
+.f222ff21222f........
+f222f2222122f........
+fffffffffffff........
+`;
+            case "image4":
+            case "supersonicR":return img`
+..ffffffffffff...ff..
+.f555555555555fff5f..
+..f555fd5555555555f..
+...f55fdd555555555f..
+....f5fd55555555555f.
+...f555555551115555f.
+..f5555555511111555f.
+.f5555555551111f51f..
+ffffff555551111f51f..
+....f5555555111f1fff.
+...f55555ddd1111ddf..
+..f555555dddddddddf..
+.fffffffffdddddddf...
+........fdffffffff...
+.......fdff5dddffff..
+......fdf11fdddf11f..
+......ff1111fddf11f..
+.......f1111ffdf1f...
+........f11ff5ffff...
+.........ff5fff......
+.........ff5f22ff....
+........ff22ff221ff..
+........f22212ff222f.
+........f2212222f222f
+........fffffffffffff
+`;
+            case "image6":
+            case "superspin":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . 5 5 5 5 . . . . . . 
+. . . . 5 5 5 d d 5 5 5 . . . . 
+. . . d d d d 5 5 5 5 5 5 . . . 
+. . 5 d d d d 5 5 5 1 1 5 5 . . 
+. . d d d d d 5 5 5 1 1 d 5 . . 
+. 5 d d d d 5 5 5 5 5 d d 5 5 . 
+. 5 d d d 5 5 5 5 5 5 5 d 5 5 . 
+. 5 5 d d 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 d d 5 5 5 5 5 5 5 5 5 5 . 
+. . 5 5 d d 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 d 5 5 5 5 5 5 5 5 . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . 5 5 5 5 5 5 5 5 . . . . 
+. . . . . . 5 5 5 5 . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
         }
         return null;
     })
